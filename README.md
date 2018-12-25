@@ -37,9 +37,6 @@ build_flags =
   -I lib/recorder_engine/include
   -L lib/recorder_engine/lib
 lib_archive = false
-```
-3. Add the libraries you need from ESP-ADF to `lib_deps`:
-```
 lib_deps =
   audio_hal
   audio_pipeline
