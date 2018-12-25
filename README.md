@@ -15,6 +15,7 @@ build_flags =
   -I lib/audio_hal/driver/es8388
   -I lib/audio_hal/driver/zl38063
   -I lib/audio_hal/driver/zl38063/api_lib
+  -I lib/audio_hal/driver/zl38063/example_apps
   -I lib/audio_hal/driver/zl38063/firmware
   -L lib/audio_hal/driver/zl38063/firmware
   -lfirmware
