@@ -6,7 +6,8 @@ ESP-ADF for PlatformIO projects.
 
 1. Copy the `lib` directory and its contents to the root of your PIO project
 2. Add the following to `platformio.ini`:
-```build_flags =
+```
+build_flags =
   -I lib/audio_hal/include
 	-I lib/audio_hal/board
 	-I lib/audio_hal/driver/es8374
@@ -38,7 +39,8 @@ ESP-ADF for PlatformIO projects.
 lib_archive = false
 ```
 3. Add the libraries you need from ESP-ADF to `lib_deps`:
-```lib_deps =
+```
+lib_deps =
   audio_hal
   audio_pipeline
   audio_sal
