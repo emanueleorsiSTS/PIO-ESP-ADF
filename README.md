@@ -8,6 +8,7 @@ ESP-ADF for PlatformIO projects.
 2. Add the following to `platformio.ini`:
 ```
 build_flags =
+  -D CONFIG_ESP_LYRAT_V4_3_BOARD
   -I lib/audio_hal/include
   -I lib/audio_hal/board
   -I lib/audio_hal/driver/es8374
