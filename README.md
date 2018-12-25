@@ -37,6 +37,9 @@ build_flags =
   -I lib/recorder_engine/include
   -L lib/recorder_engine/lib
 lib_archive = false
+```
+3. Add the following to `lib_deps`, removing the libraries you dont need:
+```
 lib_deps =
   audio_hal
   audio_pipeline
