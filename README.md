@@ -37,7 +37,10 @@ build_flags =
   -L lib/esp_sr/lib
   -I lib/recorder_engine/include
   -L lib/recorder_engine/lib
+  -I lib/esp_http_client/include
+  -I lib/esp_http_client/lib/include
 lib_archive = false
+build_unflags = -I "<path to .platformio>/packages/framework-espidf/components/esp_http_client/include"
 lib_deps =
   audio_hal
   audio_pipeline
@@ -50,3 +53,4 @@ lib_deps =
   esp_sr
   recorder_engine
 ```
+3. Replace `<path to .platformio>` in `build_unflags` with the path to your PlatformIO home directory.
