@@ -45,6 +45,7 @@ static const char *TAG = "HTTP_STREAM";
 #define MAX_PLAYLIST_LINE_SIZE (128)
 #define MAX_PLAYLIST_TRACK (20)
 #define MAX_PLAYLIST_KEEP_TRACK (18)
+#define HTTP_STREAM_BUFFER_SIZE (1024)
 
 typedef struct track_ {
     char *uri;
@@ -395,6 +396,7 @@ _stream_open_begin:
             .event_handler = _http_event_handle,
             .user_data = &info,
             .timeout_ms = 30 * 1000,
+            .buffer_size = HTTP_STREAM_BUFFER_SIZE,
         };
         http->client = esp_http_client_init(&http_cfg);
         AUDIO_MEM_CHECK(TAG, http->client, return ESP_ERR_NO_MEM);
@@ -490,7 +492,7 @@ static int _http_read(audio_element_handle_t self, char *buffer, int len, TickTy
         rlen = esp_http_client_read(http->client, buffer, len);
     }
     if (rlen <= 0) {
-        ESP_LOGW(TAG, "No more data,errno:%d", errno);
+        ESP_LOGW(TAG, "No more data,errno:%d, total_bytes:%llu", errno, info.byte_pos);
         if (dispatch_hook(self, HTTP_STREAM_FINISH_TRACK, NULL, 0) != ESP_OK) {
             ESP_LOGE(TAG, "Failed to process user callback");
             return ESP_FAIL;
