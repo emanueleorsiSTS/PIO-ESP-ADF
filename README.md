@@ -39,12 +39,17 @@ build_flags =
   -L lib/esp-adf-libs/esp_upnp/lib
   -I lib/esp-adf-libs/recorder_engine/include
   -L lib/esp-adf-libs/recorder_engine/lib
+  -I lib/esp_peripherals/driver/i2c_bus
   -I lib/esp_peripherals/include
+  -I lib/esp_peripherals/lib/adc_button
+  -I lib/esp_peripherals/lib/blufi
   -I lib/esp_peripherals/lib/button
+  -I lib/esp_peripherals/lib/IS31FL3216
   -I lib/esp_peripherals/lib/sdcard
   -I lib/esp_peripherals/lib/touch
   -I lib/esp_http_client/include
   -I lib/esp_http_client/lib/include
+  -I lib/tcp_transport/include
 lib_archive = false
 build_unflags = -I "<path to .platformio>/packages/framework-espidf/components/esp_http_client/include"
 lib_deps =
