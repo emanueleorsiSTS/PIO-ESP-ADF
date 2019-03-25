@@ -68,4 +68,4 @@ lib_deps =
   esp_peripherals
   esp_http_client
 ```
-3. Replace `<path to .platformio>` in `build_flags` with the path to your PlatformIO home directory.
+3. Replace `<path to .platformio>` in `build_unflags` with the path to your PlatformIO home directory.
